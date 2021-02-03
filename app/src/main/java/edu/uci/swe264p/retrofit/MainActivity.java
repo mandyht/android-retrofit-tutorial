@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     static final String TAG = MainActivity.class.getSimpleName();
     static final String BASE_URL = "https://api.themoviedb.org/3/";
     static Retrofit retrofit = null;
-    final static String API_KEY = "YOUR_API_KEY";
+    final static String API_KEY = "e5bd9d10f8c2d7add69851b08de20ed8";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
