@@ -1,6 +1,5 @@
 package edu.uci.swe264p.retrofit;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -47,7 +48,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         String[] movie = movies.get(position);
 
-        //holder.poster.setImageBitmap();
+        Picasso.get()
+                .load(movie[0])
+                .into(holder.poster);
 
         holder.title.setText(movie[1]);
         holder.releaseDate.setText(movie[2]);

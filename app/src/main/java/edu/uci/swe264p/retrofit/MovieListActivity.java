@@ -25,6 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class MovieListActivity extends AppCompatActivity {
     private static final String BASE_URL = "https://api.themoviedb.org/3/";
+    private static final String POSTER_BASE_SIZE = "https://image.tmdb.org/t/p/w500/";
     private static final String API_KEY = "e5bd9d10f8c2d7add69851b08de20ed8";
 
     private static Retrofit retrofit = null;
@@ -65,7 +66,7 @@ public class MovieListActivity extends AppCompatActivity {
                 List<LinkedTreeMap> results = response.body().getResults();
                 for (int i = 0; i < results.size(); i++) {
                     String[] array = new String[] {
-                            results.get(i).get("poster_path").toString(),
+                            POSTER_BASE_SIZE + results.get(i).get("poster_path").toString(),
                             results.get(i).get("title").toString(),
                             results.get(i).get("release_date").toString(),
                             String.valueOf(results.get(i).get("vote_average")),
